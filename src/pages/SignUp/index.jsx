@@ -4,6 +4,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { api } from '../../services/api';
+import Button from '../../components/Button';
 import {
   Container,
   Form,
@@ -11,7 +12,8 @@ import {
   SubmitInput,
   Text,
   Separator,
-  CreateAccountLink,
+  Select,
+  Bottom,
 } from './styles';
 
 export default function SignUp(props) {
@@ -27,14 +29,18 @@ export default function SignUp(props) {
   return (
     <Container>
       <Text>
-        <h2>PS13SI - Bootcamps</h2>
-        <h3>Oportunidade de se capacitar para atuar na área de tecnologia</h3>
+        <h1>PS13SI - Bootcamps</h1>
+        <h2>
+          Nossa plataforma te auxilia a se capacitar para atuar na área de
+          tecnologia
+        </h2>
       </Text>
 
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} autoComplete="on" id="form">
         <Input
-          value={user.name}
-          onChange={(event) => setUser({ ...user, name: event.target.value })}
+          value={user.nome}
+          onChange={(event) => setUser({ ...user, nome: event.target.value })}
+          name="nome"
           placeholder="Nome"
           type="text"
         />
@@ -42,6 +48,7 @@ export default function SignUp(props) {
         <Input
           value={user.email}
           onChange={(event) => setUser({ ...user, email: event.target.value })}
+          name="email"
           placeholder="Email"
           type="email"
         />
@@ -55,13 +62,20 @@ export default function SignUp(props) {
           type="password"
         />
 
-        <SubmitInput type="submit" value="Cadastrar" />
+        <Bottom>
+          <Select
+            onChange={(event) => setUser({ ...user, type: event.target.value })}
+          >
+            <option value="estudante">Estudante</option>
+            <option value="coordenador">Coordenador</option>
+          </Select>
+
+          <SubmitInput type="submit" value="Criar conta" />
+        </Bottom>
 
         <Separator />
 
-        <CreateAccountLink>
-          <a href="/login"> Já possui uma conta? </a>
-        </CreateAccountLink>
+        <Button text="Já possui uma conta? Faça Login" redirect="/login" />
       </Form>
     </Container>
   );

@@ -2,33 +2,42 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: center;
-
-  h3 {
-    color: #333;
-  }
 `;
 
 export const Form = styled.form`
-  background: #fff;
   width: 400px;
-  height: 380px;
+  height: 315px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  padding-top: 20px;
+
+  a {
+    color: #db1313;
+  }
+
+  button {
+    width: 362px;
+    height: 80px;
+    background-color: #387ea8;
+    text-decoration: underline;
+
+    &:hover {
+      background-color: #4396ca;
+    }
+  }
 `;
 
 export const Input = styled.input`
   display: block;
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 92.5%;
-  height: 50px;
+  width: 362px;
+  height: 80px;
   padding: 15px;
-  font-size: 17px;
+  font-size: 20px;
+  font-weight: 300;
   border: 1px solid #dddfe2;
-  border-radius: 6px;
-  color: #1d2129;
+  border-radius: 5px;
+  color: #000;
 `;
 
 export const SubmitInput = styled(Input)`
@@ -38,8 +47,9 @@ export const SubmitInput = styled(Input)`
   color: #fff;
   background-color: #f55e61;
   cursor: pointer;
+
   &:hover {
-    background-color: #e93a3a;
+    background-color: #d95255;
   }
 `;
 
@@ -51,30 +61,37 @@ export const Separator = styled.div`
   display: flex;
 `;
 
-export const CreateAccountLink = styled.div`
-  a {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    width: 92.5%;
-    height: 50px;
-    padding: 12.5px;
-    font-size: 17px;
-    font-weight: 700;
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
-    background-color: #72cc60;
-    color: #fff;
+export const Text = styled.div`
+  padding: 50px;
+
+  h1 {
+    color: #d95255;
+  }
+
+  h2 {
+    color: #222;
   }
 `;
 
-export const Text = styled.div`
-  padding: 50px;
-  h2 {
-    color: #f55e61;
-  }
-  h3 {
-    color: #222;
-    font-size: 24px;
+export const Select = styled.select`
+  font-size: 20px;
+  width: 172.5px;
+  height: 60px;
+  border: 1px solid #dddfe2;
+  border-radius: 5px;
+  border: 0 0 1px 0px;
+`;
+
+export const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 362px;
+  height: 60px;
+
+  input {
+    width: 172.5px;
+    margin: 0;
+    height: 60px;
   }
 `;

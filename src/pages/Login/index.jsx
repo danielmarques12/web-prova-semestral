@@ -5,15 +5,8 @@
 import React, { useState } from 'react';
 import { api } from '../../services/api';
 import { login, setUserType } from '../../services/auth';
-import {
-  Container,
-  Form,
-  Input,
-  SubmitInput,
-  Text,
-  Separator,
-  CreateAccountLink,
-} from './styles';
+import Button from '../../components/Button';
+import { Container, Form, Input, SubmitInput, Text, Separator } from './styles';
 
 export default function Login(props) {
   const [user, setUser] = useState({});
@@ -31,11 +24,14 @@ export default function Login(props) {
   return (
     <Container>
       <Text>
-        <h2>PS13SI - Bootcamps</h2>
-        <h3>Oportunidade de se capacitar para atuar na área de tecnologia</h3>
+        <h1>PS13SI - Bootcamps</h1>
+        <h2>
+          Nossa plataforma te auxilia a se capacitar para atuar na área de
+          tecnologia
+        </h2>
       </Text>
 
-      <Form onSubmit={handleSubmit} autoComplete="on">
+      <Form onSubmit={handleSubmit} autoComplete="on" id="form">
         <Input
           value={user.email}
           onChange={(event) => setUser({ ...user, email: event.target.value })}
@@ -57,9 +53,7 @@ export default function Login(props) {
 
         <Separator />
 
-        <CreateAccountLink>
-          <a href="/signup"> Criar uma conta </a>
-        </CreateAccountLink>
+        <Button text="Criar uma conta" redirect="/signup" />
       </Form>
     </Container>
   );

@@ -5,15 +5,23 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #fff;
   width: 400px;
   height: 315px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  padding-top: 20px;
+
   a {
     color: #db1313;
+  }
+
+  button {
+    width: 363px;
+    height: 80px;
+    background-color: #387ea8;
+
+    &:hover {
+      background-color: #4396ca;
+    }
   }
 `;
 
@@ -21,13 +29,14 @@ export const Input = styled.input`
   display: block;
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 92.5%;
-  height: 50px;
+  width: 363px;
+  height: 80px;
   padding: 15px;
-  font-size: 17px;
+  font-size: 20px;
+  font-weight: 300;
   border: 1px solid #dddfe2;
-  border-radius: 6px;
-  color: #1d2129;
+  border-radius: 5px;
+  color: #000;
 `;
 
 export const SubmitInput = styled(Input)`
@@ -35,10 +44,11 @@ export const SubmitInput = styled(Input)`
   font-size: 20px;
   font-weight: 700;
   color: #fff;
-  background-color: #db1313;
+  background-color: #f55e61;
   cursor: pointer;
+
   &:hover {
-    background-color: #bd1414;
+    background-color: #d95255;
   }
 `;
 
@@ -50,40 +60,14 @@ export const Separator = styled.div`
   display: flex;
 `;
 
-export const CreateAccountLink = styled.div`
-  a {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    width: 92.5%;
-    height: 50px;
-    padding: 12.5px;
-    font-size: 17px;
-    font-weight: 700;
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
-    background-color: #42b72a;
-    color: #fff;
-  }
-`;
-
 export const Text = styled.div`
   padding: 50px;
-  h2 {
-    color: #bd1414;
-  }
-  h3 {
-    color: #222;
-    font-size: 24px;
-  }
-`;
 
-export const Select = styled.select`
-  margin-top: 10px;
-  font-size: 17px;
-  width: 75px;
-  height: 30px;
-  border-radius: 3px;
-  border: 0 0 1px 0px;
-  background: #fff;
+  h1 {
+    color: #d95255;
+  }
+
+  h2 {
+    color: #222;
+  }
 `;
