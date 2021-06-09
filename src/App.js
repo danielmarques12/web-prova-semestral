@@ -5,7 +5,7 @@ import Header from './components/Header';
 
 import './styles/font.css';
 
-function App() {
+function App(props) {
   return (
     <>
       <Header />
