@@ -4,11 +4,11 @@ import React from 'react';
 import './styles.css';
 
 export default function Home(props) {
-  const { text } = props;
+  const { text, redirect } = props;
 
   return (
     <>
-      <Link to="/signup">
+      <Link to={redirect}>
         <button type="submit">{text}</button>
       </Link>
     </>
