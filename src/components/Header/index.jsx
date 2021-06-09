@@ -23,22 +23,16 @@ export default function Header() {
             </li>
           </ul>
         </a>
-        <a href="/">
+        <a href="/trabalhe-conosco">
           <ul>
-            <li>Restaurants</li>
+            <li>Trabalhe conosco</li>
           </ul>
         </a>
-        <a href="/">
+        <a href="/bootcamps">
           <ul>
-            <li>Used Technologies</li>
+            <li>Bootcamps</li>
           </ul>
         </a>
-        <a href="/reservations">
-          <ul>
-            <li>My reservations</li>
-          </ul>
-        </a>
-        {/* Make this a single component */}
         {isAuthenticated() ? <ButtonsUser /> : <ButtonsGuest />}
       </nav>
     </Head>
