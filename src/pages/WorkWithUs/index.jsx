@@ -39,7 +39,7 @@ export default function WorkWithUs() {
             placeholder="Linkedin"
             type="text"
           />
-          <Button text="Enviar" />
+          <Button text="Enviar" redirect="/signup" />
         </Form>
         <img src="https://bit.ly/3w76aSY" alt="WorkWithUs illustration" />
       </Content>

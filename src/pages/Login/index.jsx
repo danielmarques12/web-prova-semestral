@@ -1,14 +1,10 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { api } from '../../services/api';
 import { login, setUserType } from '../../services/auth';
 import Button from '../../components/Button';
 import { Container, Form, Input, SubmitInput, Text, Separator } from './styles';
 
-export default function Login(props) {
+export default function Login() {
   const [user, setUser] = useState({});
 
   async function handleSubmit(event) {

@@ -7,7 +7,7 @@ export const Content = styled.div`
   height: 821px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   img {
