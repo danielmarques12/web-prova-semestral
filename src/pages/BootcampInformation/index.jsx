@@ -1,24 +1,31 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Container, Text, RightBar, LeftBar } from './styles';
 import Button from '../../components/Button';
+import { api } from '../../services/api';
 
-export default function BootcampInformation() {
+export default function BootcampInformation({ match }) {
+  const { id } = match.params;
+  const [bootcamp, setBootcamp] = useState({});
+
+  const handleClick = () => api.post(`students/subscribe/${bootcamp.id}`);
+
+  useEffect(
+    () =>
+      api.get(`bootcamps/list/${id}`).then((item) => setBootcamp(item.data[0])),
+    []
+  );
+
   return (
     <Container>
       <LeftBar>
-        <span>Professores</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-
         <span>Local</span>
-        <p>São Paulo - SP</p>
+        <p>{bootcamp.location}</p>
 
         <span>Duração</span>
-        <p>6 meses</p>
+        <p>{bootcamp.duration}</p>
 
-        <Button text="Inscreva-se" redirect="/" />
+        <Button text="Inscreva-se" onClick={handleClick} />
       </LeftBar>
 
       <RightBar>

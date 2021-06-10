@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Text, Cards } from './styles';
 import BootcampCard from '../../components/BootcampCard';
+import { api } from '../../services/api';
 
 export default function Bootcamps() {
+  const [bootcamps, setBootcamps] = useState([]);
+
+  useEffect(
+    () =>
+      api.get('bootcamps/listall').then((item) => {
+        setBootcamps(item.data);
+      }),
+    []
+  );
+
   return (
     <Container>
       <Text>
@@ -14,18 +25,13 @@ export default function Bootcamps() {
         </h2>
       </Text>
       <Cards>
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
-        <BootcampCard />
+        {bootcamps.map((bootcamp) => (
+          <BootcampCard
+            bootcamp={bootcamp}
+            buttonText="Inscreva-se"
+            redirect={`/bootcamp/${bootcamp.id}`}
+          />
+        ))}
       </Cards>
       <div />
     </Container>

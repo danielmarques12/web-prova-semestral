@@ -4,12 +4,14 @@ import React from 'react';
 import './styles.css';
 
 export default function Home(props) {
-  const { text, redirect } = props;
+  const { text, redirect, onClick } = props;
 
   return (
     <>
       <Link to={redirect}>
-        <button type="submit">{text}</button>
+        <button type="submit" onClick={onClick}>
+          {text}
+        </button>
       </Link>
     </>
   );

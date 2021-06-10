@@ -3,9 +3,12 @@ import { FaGithub } from 'react-icons/fa';
 import { Head } from './styles';
 import ButtonsGuest from './ButtonsGuest';
 import ButtonsUser from './ButtonsUser';
-import { isAuthenticated } from '../../services/auth';
+import { isAuthenticated, getUserType } from '../../services/auth';
 
 export default function Header() {
+  const my_bootcamps =
+    getUserType() === 'student' ? '/students' : '/coordinators';
+
   return (
     <Head>
       <img src="https://bit.ly/3uNfr0N" alt="Fiap logo" />
@@ -23,16 +26,27 @@ export default function Header() {
             </li>
           </ul>
         </a>
-        <a href="/trabalhe-conosco">
-          <ul>
-            <li>Trabalhe conosco</li>
-          </ul>
-        </a>
+
         <a href="/bootcamps">
           <ul>
             <li>Bootcamps</li>
           </ul>
         </a>
+
+        {isAuthenticated() ? (
+          <a href={my_bootcamps}>
+            <ul>
+              <li>Meus Bootcamps</li>
+            </ul>
+          </a>
+        ) : null}
+
+        <a href="/trabalhe-conosco">
+          <ul>
+            <li>Trabalhe conosco</li>
+          </ul>
+        </a>
+
         {isAuthenticated() ? <ButtonsUser /> : <ButtonsGuest />}
       </nav>
     </Head>
