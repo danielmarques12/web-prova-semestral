@@ -7,12 +7,21 @@ import { api } from '../../services/api';
 export default function BootcampInformation({ match }) {
   const { id } = match.params;
   const [bootcamp, setBootcamp] = useState({});
+  const [subscribed, setSubscribed] = useState(Boolean);
 
-  const handleClick = () => api.post(`students/subscribe/${bootcamp.id}`);
+  const handleClick = () => {
+    api.post(`students/subscribe/${bootcamp.id}`);
+    document.location.reload(true);
+  };
 
   useEffect(
     () =>
-      api.get(`bootcamps/list/${id}`).then((item) => setBootcamp(item.data[0])),
+      api.get(`bootcamps/list/${id}`).then((response) => {
+        setBootcamp(response.data[0]);
+        api
+          .get(`students/check-if-subscribed/${response.data[0].id}`)
+          .then((item) => setSubscribed(item.data));
+      }),
     []
   );
 
@@ -25,7 +34,10 @@ export default function BootcampInformation({ match }) {
         <span>Duração</span>
         <p>{bootcamp.duration}</p>
 
-        <Button text="Inscreva-se" onClick={handleClick} />
+        <Button
+          text={subscribed ? 'Já inscrito' : 'Inscreva-se'}
+          onClick={subscribed ? null : handleClick}
+        />
       </LeftBar>
 
       <RightBar>

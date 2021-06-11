@@ -41,6 +41,14 @@ export default function Header() {
           </a>
         ) : null}
 
+        {getUserType() === 'coordinator' ? (
+          <a href="/bootcamp-register">
+            <ul>
+              <li>Cadastrar um Bootcamp</li>
+            </ul>
+          </a>
+        ) : null}
+
         <a href="/trabalhe-conosco">
           <ul>
             <li>Trabalhe conosco</li>

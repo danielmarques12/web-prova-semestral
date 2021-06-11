@@ -6,7 +6,7 @@ export default function ButtonsUser() {
     <div className="buttons">
       <a href="/">
         <button onClick={() => logout()} type="button">
-          Logout
+          Sair
         </button>
       </a>
     </div>

@@ -18,6 +18,7 @@ export const LeftBar = styled.div`
   height: 420px;
   color: #000;
   text-align: center;
+  margin-top: 100px;
 
   span {
     font-size: 23px;

@@ -20,11 +20,6 @@ export const Container = styled.div`
 
     button {
       width: 100%;
-      /* background-color: #387ea8;
-
-      &:hover {
-        background-color: #4396ca;
-      } */
     }
   }
 `;

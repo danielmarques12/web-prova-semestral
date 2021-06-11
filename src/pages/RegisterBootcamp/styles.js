@@ -36,7 +36,7 @@ export const Input = styled.input`
 
 export const SubmitInput = styled(Input)`
   padding: 0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
   background-color: #f55e61;

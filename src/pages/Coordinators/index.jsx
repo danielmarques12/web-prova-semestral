@@ -26,7 +26,7 @@ export default function Coordinators() {
           <BootcampCard
             bootcamp={bootcamp}
             buttonText="Gerenciar alunos"
-            redirect={`/coordinator/bootcamps/${bootcamp.id}`}
+            redirect={`/manage-students/${bootcamp.id}`}
           />
         ))}
       </Cards>
