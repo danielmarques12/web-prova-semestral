@@ -17,7 +17,7 @@ import {
 } from './styles';
 
 export default function SignUp(props) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ type: 'estudante' });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ export default function SignUp(props) {
       <Form onSubmit={handleSubmit} autoComplete="on" id="form">
         <Input
           value={user.nome}
-          onChange={(event) => setUser({ ...user, nome: event.target.value })}
+          onChange={(event) => setUser({ ...user, name: event.target.value })}
           name="nome"
           placeholder="Nome"
           type="text"
@@ -69,6 +69,8 @@ export default function SignUp(props) {
             <option value="estudante">Estudante</option>
             <option value="coordenador">Coordenador</option>
           </Select>
+
+          {console.log(user)}
 
           <SubmitInput type="submit" value="Criar conta" />
         </Bottom>
