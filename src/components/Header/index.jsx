@@ -7,7 +7,7 @@ import { isAuthenticated, getUserType } from '../../services/auth';
 
 export default function Header() {
   const my_bootcamps =
-    getUserType() === 'student' ? '/students' : '/coordinators';
+    getUserType() === 'estudante' ? '/students' : '/coordinators';
 
   return (
     <Head>
@@ -41,7 +41,7 @@ export default function Header() {
           </a>
         ) : null}
 
-        {getUserType() === 'coordinator' ? (
+        {getUserType() === 'coordenador' ? (
           <a href="/bootcamp-register">
             <ul>
               <li>Cadastrar um Bootcamp</li>
