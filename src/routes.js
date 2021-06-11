@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Bootcamps from './pages/Bootcamps';
 import Students from './pages/Students';
 import Coordinators from './pages/Coordinators';
+import ManageStudents from './pages/ManageStudents';
 import RegisterBootcamp from './pages/RegisterBootcamp';
 import BootcampInformation from './pages/BootcampInformation';
 import WorkWithUs from './pages/WorkWithUs';
@@ -18,6 +19,10 @@ function Routes() {
         <Route exact path="/" component={Home} />
         <Route path="/trabalhe-conosco" component={WorkWithUs} />
         <Route exact path="/bootcamps" component={Bootcamps} />
+        <Route
+          path="/manage-students/:bootcamp_id"
+          component={ManageStudents}
+        />
         <Route path="/students" component={Students} />
         <Route path="/coordinators" component={Coordinators} />
         <Route path="/bootcamp-register" component={RegisterBootcamp} />
