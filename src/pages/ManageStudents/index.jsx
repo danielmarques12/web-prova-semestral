@@ -2,10 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Table } from './styles';
 import { api } from '../../services/api';
+import Button from '../../components/Button';
 
 export default function ManageStudents({ match }) {
   const [students, setStudents] = useState([]);
   const { bootcamp_id } = match.params;
+
+  const handleClick = (student_id) => {
+    api.delete(`students/delete/${student_id}`);
+    document.location.reload(true);
+  };
 
   useEffect(
     () =>
@@ -26,10 +32,15 @@ export default function ManageStudents({ match }) {
           <th>Gerenciar</th>
         </tr>
         {students.map((student) => (
-          <tr>
+          <tr key={student.id}>
             <td>{student.name}</td>
             <td>{student.email}</td>
-            <td>Remover</td>
+            <td>
+              <Button
+                text="Remover estudante"
+                onClick={() => handleClick(student.id)}
+              />
+            </td>
           </tr>
         ))}
       </Table>

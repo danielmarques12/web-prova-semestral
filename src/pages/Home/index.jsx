@@ -13,7 +13,7 @@ export default function Home() {
             habilidades e a mentalidade empreendedora que você precisa para
             prosperar agora e no futuro.
           </p>
-          <Button text="Começe agora" />
+          <Button text="Explorar" redirect="/bootcamps" />
         </About>
         <img src="https://bit.ly/3pCWPjo" alt="Home illustration" />
       </Content>
