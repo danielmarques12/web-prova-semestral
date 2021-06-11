@@ -70,8 +70,6 @@ export default function SignUp(props) {
             <option value="coordenador">Coordenador</option>
           </Select>
 
-          {console.log(user)}
-
           <SubmitInput type="submit" value="Criar conta" />
         </Bottom>
 
